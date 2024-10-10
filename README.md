@@ -8,3 +8,12 @@ You are provided with a dataset called "bank_marketing.csv", which contains info
 #### >client.csv: Contains personal and demographic information about the bank's clients.
 #### >campaign.csv: Contains data related to the current and previous marketing campaigns, including the number of contacts made and the outcomes of these campaigns.
 #### >economics.csv: Contains economic data such as the consumer price index and the Euribor three-month rate for each client.
+### 2.Data Cleaning:
+#### In the client.csv file, columns like job and education have "." replaced with "_", and unknown values are replaced with NaN (for education). Boolean values are standardized as True/False for columns like credit_default and mortgage.
+#### In the campaign.csv file, date columns are combined and converted into a proper datetime format. Boolean values (True/False) are used to represent the success of previous and current campaign outcomes.
+#### economics.csv is clean, but it is extracted from the main dataset as a separate table containing economic data.
+### 3.Data Transformation:
+#### >The client.csv file includes transformations to convert credit default and mortgage columns into boolean values.
+#### >The campaign.csv file ensures that the last_contact_date is formatted correctly by combining day, month, and a fixed year value, and transforming it into a valid datetime format.
+### 4.CSV Output:
+#### After cleaning and transforming the data, the resulting tables are saved into three individual CSV files (client.csv, campaign.csv, and economics.csv), ready to be imported into a PostgreSQL database.
